@@ -1,4 +1,3 @@
-
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
     module Integrations #:nodoc:
@@ -8,13 +7,13 @@ module ActiveMerchant #:nodoc:
         autoload 'Notification', File.dirname(__FILE__) + '/two_checkout/notification'
        
         mattr_accessor :service_url
-        self.service_url = 'https://www.2checkout.com/2co/buyer/purchase'
+        self.service_url = 'https://www.2checkout.com/checkout/purchase'
 
-        def self.notification(post)
+        def self.notification(post, options = {})
           Notification.new(post)
         end  
         
-        def self.return(query_string)
+        def self.return(query_string, options = {})
           Return.new(query_string)
         end
       end
