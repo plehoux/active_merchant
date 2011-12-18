@@ -237,7 +237,8 @@ module ActiveMerchant #:nodoc:
         post[:rbExpiry]           = (recurring_options[:duration][:start_date] >> recurring_options[:duration][:occurrences]).strftime("%m%d%Y") if !recurring_options[:duration][:occurrences].nil?
         post[:rbEndMonth]         = recurring_options[:end_of_month] if recurring_options[:end_of_month]
         post[:rbApplyTax1]        = recurring_options[:tax1] if recurring_options[:tax1]
-
+      end
+      
       def add_secure_profile_variables(post, options = {})
         post[:serviceVersion] = SP_SERVICE_VERSION
         post[:responseFormat] = 'QS'
