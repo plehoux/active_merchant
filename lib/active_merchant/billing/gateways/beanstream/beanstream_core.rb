@@ -289,7 +289,7 @@ module ActiveMerchant #:nodoc:
         end
       end
       
-      def recurring_commit(params)
+      def recurring_commit(params, use_profile_api = false)
         recurring_post(post_data(params))
       end
       
